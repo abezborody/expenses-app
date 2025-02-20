@@ -27,7 +27,7 @@ RUN bun install --ci
 # Copy application code
 COPY . .
 
-CMD cd frontend && bun run build
+CMD cd frontend && bun install && bun run build
 
 # Final stage for app image
 FROM base
