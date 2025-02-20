@@ -7,7 +7,7 @@ FROM oven/bun:${BUN_VERSION}-slim as base
 LABEL fly_launch_runtime="Bun"
 
 # Bun app lives here
-WORKDIR /
+WORKDIR /app
 
 # Set production environment
 ENV NODE_ENV="production"
@@ -27,10 +27,12 @@ RUN bun install --ci
 # Copy application code
 COPY . .
 
+# Build the frontend
 WORKDIR /app/frontend
-RUN bun install
+RUN bun install --ci
 RUN bun run build
 
+# Return to the root directory
 WORKDIR /app
 
 # Final stage for app image
