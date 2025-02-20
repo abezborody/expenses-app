@@ -27,11 +27,13 @@ RUN bun install --ci
 # Copy application code
 COPY . .
 
-# Final stage for app image
-FROM base
-
 WORKDIR /app/frontend
 RUN bun run build
+
+WORKDIR /app
+
+# Final stage for app image
+FROM base
 
 # Copy built application
 COPY --from=build /app /app
