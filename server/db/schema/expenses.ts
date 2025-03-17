@@ -1,11 +1,11 @@
 import {
+  date,
+  index,
   numeric,
-  text,
   pgTable,
   serial,
-  index,
+  text,
   timestamp,
-  date,
 } from "drizzle-orm/pg-core"
 import { createInsertSchema, createSelectSchema } from "drizzle-zod"
 import { z } from "zod"
@@ -24,7 +24,7 @@ export const expenses = pgTable(
     return {
       userIdIndex: index("name_idx").on(expenses.userId),
     }
-  }
+  },
 )
 
 // Schema for inserting a user - can be used to validate API requests

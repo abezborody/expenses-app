@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-import { userQueryOptions } from "../../lib/api"
-import { useQuery } from "@tanstack/react-query"
-import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
+import { useQuery } from "@tanstack/react-query"
+import { userQueryOptions } from "../../lib/api"
 
 export const Route = createFileRoute("/_authenticated/profile")({
   component: Profile,

@@ -1,12 +1,12 @@
-import { type QueryClient } from "@tanstack/react-query"
+import { Toaster } from "@/components/ui/sonner"
+import { Switch } from "@/components/ui/switch"
+import type { QueryClient } from "@tanstack/react-query"
 import {
   Link,
   Outlet,
   createRootRouteWithContext,
 } from "@tanstack/react-router"
-import { Switch } from "@/components/ui/switch"
 import { useState } from "react"
-import { Toaster } from "@/components/ui/sonner"
 
 interface MyRouterContext {
   queryClient: QueryClient

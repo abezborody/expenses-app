@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { deleteExpense, getAllExpensesQueryOptions } from "@/lib/api"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { Trash, Loader } from "lucide-react"
+import { Loader, Trash } from "lucide-react"
 import { toast } from "sonner"
 
 export const ExpenseDeleteButton = ({ id }: { id: number }) => {

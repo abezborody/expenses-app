@@ -1,8 +1,8 @@
 import { Hono } from "hono"
-import { logger } from "hono/logger"
 import { serveStatic } from "hono/bun"
-import { exprensesRoute } from "./routes/expenses"
+import { logger } from "hono/logger"
 import { authRoute } from "./routes/auth"
+import { exprensesRoute } from "./routes/expenses"
 
 // Init app
 const app = new Hono()

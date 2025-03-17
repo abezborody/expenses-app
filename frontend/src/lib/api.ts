@@ -1,7 +1,7 @@
-import { hc } from "hono/client"
-import { type ApiRoutes } from "@server/app"
+import type { ApiRoutes } from "@server/app"
+import type { CreateExpense } from "@server/sharedTypes"
 import { queryOptions } from "@tanstack/react-query"
-import { type CreateExpense } from "@server/sharedTypes"
+import { hc } from "hono/client"
 
 const client = hc<ApiRoutes>("/")
 
@@ -19,7 +19,7 @@ async function getCurrentUser() {
 export const userQueryOptions = queryOptions({
   queryKey: ["getCurrentUser"],
   queryFn: getCurrentUser,
-  staleTime: Infinity,
+  staleTime: Number.POSITIVE_INFINITY,
 })
 
 export async function getTotalSpent() {
@@ -63,7 +63,7 @@ export const loadingCreateExpenseQueryOptions = queryOptions<{
   queryFn: async () => {
     return {}
   },
-  staleTime: Infinity,
+  staleTime: Number.POSITIVE_INFINITY,
 })
 
 export async function deleteExpense(id: number) {

@@ -1,11 +1,11 @@
 import {
-  createKindeServerClient,
   GrantType,
   type SessionManager,
   type UserType,
+  createKindeServerClient,
 } from "@kinde-oss/kinde-typescript-sdk"
-import { type Context } from "hono"
-import { getCookie, setCookie, deleteCookie } from "hono/cookie"
+import type { Context } from "hono"
+import { deleteCookie, getCookie, setCookie } from "hono/cookie"
 import { createMiddleware } from "hono/factory"
 
 // Client for authorization code flow
@@ -17,10 +17,10 @@ export const kindeClient = createKindeServerClient(
     clientSecret: process.env.KINDE_CLIENT_SECRET!,
     redirectURL: process.env.KINDE_REDIRECT_URI!,
     logoutRedirectURL: process.env.KINDE_LOGOUT_REDIRECT_URI!,
-  }
+  },
 )
 
-let store: Record<string, unknown> = {}
+const store: Record<string, unknown> = {}
 
 export const sessionManager = (c: Context): SessionManager => ({
   async getSessionItem(key: string) {

@@ -1,9 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router"
-import {
-  getAllExpensesQueryOptions,
-  loadingCreateExpenseQueryOptions,
-} from "@/lib/api"
-import { useQuery } from "@tanstack/react-query"
+import { Skeleton } from "@/components/ui/skeleton"
 import {
   Table,
   TableBody,
@@ -13,8 +8,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Skeleton } from "@/components/ui/skeleton"
+import {
+  getAllExpensesQueryOptions,
+  loadingCreateExpenseQueryOptions,
+} from "@/lib/api"
 import { ExpenseDeleteButton } from "@/shared/ui/delete-button"
+import { useQuery } from "@tanstack/react-query"
+import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/_authenticated/expenses")({
   component: Expenses,

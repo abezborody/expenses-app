@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router"
 import {
   Card,
   CardContent,
@@ -6,8 +5,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { getTotalSpent } from "../../lib/api"
 import { useQuery } from "@tanstack/react-query"
+import { createFileRoute } from "@tanstack/react-router"
+import { getTotalSpent } from "../../lib/api"
 
 export const Route = createFileRoute("/_authenticated/")({
   component: Index,
