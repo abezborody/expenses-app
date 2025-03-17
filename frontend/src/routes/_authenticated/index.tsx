@@ -21,7 +21,7 @@ function Index() {
   })
 
   if (error) {
-    return "Error:" + error.message
+    return `Error:${error.message}`
   }
 
   return (

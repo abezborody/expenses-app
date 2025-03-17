@@ -28,7 +28,7 @@ function Expenses() {
   )
 
   if (error) {
-    return "Error:" + error.message
+    return `Error:${error.message}`
   }
 
   return (
@@ -40,7 +40,7 @@ function Expenses() {
             <TableHead className="w-[140px]">Date</TableHead>
             <TableHead>Title</TableHead>
             <TableHead className="text-right">Amount</TableHead>
-            <TableHead className="text-right"></TableHead>
+            <TableHead className="text-right" />
           </TableRow>
         </TableHeader>
         <TableBody>

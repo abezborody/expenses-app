@@ -18,7 +18,7 @@ export const ExpenseDeleteButton = ({ id }: { id: number }) => {
         getAllExpensesQueryOptions.queryKey,
         (existingExpenses) => ({
           ...existingExpenses,
-          expenses: existingExpenses!.expenses.filter(
+          expenses: existingExpenses?.expenses.filter(
             (expense) => expense.id !== id,
           ),
         }),

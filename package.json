@@ -5,7 +5,8 @@
   "scripts": {
     "start": "bun run server/index.ts",
     "dev": "bun --watch server/index.ts",
-    "lint": "biome lint --write --unsafe .",
+    "lint": "biome lint .",
+    "lintwrite": "biome lint --write --unsafe .",
     "check": "biome check --write ."
   },
   "devDependencies": {
