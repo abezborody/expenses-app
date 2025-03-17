@@ -5,7 +5,8 @@
   "scripts": {
     "start": "bun run server/index.ts",
     "dev": "bun --watch server/index.ts",
-    "lint": "biome check --write ."
+    "lint": "biome lint .",
+    "check": "biome check --write ."
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
